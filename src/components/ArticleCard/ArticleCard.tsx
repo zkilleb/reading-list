@@ -24,6 +24,7 @@ export function ArticleCard({
 
   return (
     <Card
+      data-testid="ArticleCard"
       className="ArticleCard"
       sx={{
         ':hover': {
@@ -36,7 +37,7 @@ export function ArticleCard({
         component="img"
         sx={{ width: 151 }}
         image={mediaThumbnail || 'simpsons.gif'}
-        alt="Article image"
+        alt={mediaThumbnail ? 'Article image' : 'Fallback image'}
       />
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>

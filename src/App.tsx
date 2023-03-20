@@ -4,7 +4,7 @@ import { Home, NotFound, Login } from './routes';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" data-testid="App">
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
