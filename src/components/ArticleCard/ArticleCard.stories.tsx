@@ -52,3 +52,14 @@ LongDescription.args = {
   creator: 'Writer McWriterson',
   link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
 };
+
+export const WideImage = Template.bind({});
+WideImage.args = {
+  title: 'Article Title',
+  description:
+    'This is a description of the article. It should display under the title. This is some extra text that should translate to ellipsis.',
+  pubDate: 'Mon, 20 Mar 2023 17:56:10 +0000',
+  mediaThumbnail: '/widebanner.jpg',
+  creator: 'Writer McWriterson',
+  link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+};
