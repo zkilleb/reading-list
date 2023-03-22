@@ -1,6 +1,7 @@
 import React from 'react';
 import { Item } from '../../classes';
-import { ArticleCard, Header } from '../../components';
+import { ArticleCard } from '../../components';
+import { Header } from '../../components/Header';
 import { ArticleCardSkeleton } from '../../components/ArticleCard';
 import { getArticles } from '../../hooks';
 
