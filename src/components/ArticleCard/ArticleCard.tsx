@@ -8,7 +8,7 @@ import {
   Tooltip,
 } from '@mui/material';
 import { Item } from '../../classes';
-import { formatDate, formatLongDescription } from '../../util';
+import { formatDate, formatLongDescription, getLogo } from '../../util';
 
 export function ArticleCard({
   pubDate,
@@ -35,11 +35,18 @@ export function ArticleCard({
     >
       <CardMedia
         component="img"
-        sx={{ width: 151 }}
-        image={mediaThumbnail || 'simpsons.gif'}
+        sx={{ width: 151, backgroundColor: 'lightgray' }}
+        image={mediaThumbnail || getLogo(link)}
         alt={mediaThumbnail ? 'Article image' : 'Fallback image'}
       />
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}
+      >
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
             {title}

@@ -1,2 +1,4 @@
 .husky
 .github
+public/
+.prettierignore

@@ -11,16 +11,16 @@ export const sportsFeeds = {
   },
   nhl: {
     espn: ['https://www.espn.com/espn/rss/nhl/news'],
-    anaheimDucks: {
-      hockeyWriters: [
-        'https://thehockeywriters.com/category/anaheim-ducks/feed/',
-      ],
-    },
-    stLouisBlues: {
-      hockeyWriters: [
-        'https://thehockeywriters.com/category/st-louis-blues/feed/',
-      ],
-    },
+    // anaheimDucks: {
+    //   hockeyWriters: [
+    //     'https://thehockeywriters.com/category/anaheim-ducks/feed/',
+    //   ],
+    // },
+    // stLouisBlues: {
+    //   hockeyWriters: [
+    //     'https://thehockeywriters.com/category/st-louis-blues/feed/',
+    //   ],
+    // },
   },
   motorsports: {
     espn: ['https://www.espn.com/espn/rss/rpm/news'],

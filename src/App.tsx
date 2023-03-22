@@ -2,11 +2,11 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { Home, NotFound, Login } from './routes';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { baseTheme } from './themes';
+import { darkTheme } from './themes';
 
 function App() {
   return (
-    <ThemeProvider theme={baseTheme}>
+    <ThemeProvider theme={darkTheme}>
       <div className="App" data-testid="App">
         <CssBaseline />
         <Routes>
