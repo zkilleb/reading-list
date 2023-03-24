@@ -31,7 +31,7 @@ export function ArticleCard({
           boxShadow: 20,
         },
       }}
-      onClick={handleNavigation}
+      onDoubleClick={handleNavigation}
     >
       <CardMedia
         component="img"

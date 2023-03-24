@@ -10,6 +10,7 @@ export function Home() {
   const [visibleArticles, setVisibleArticles] = React.useState<Item[]>();
   const [articlesShown, setArticlesShown] = React.useState(5);
   const [filterValue, setFilterValue] = React.useState<string>('All');
+  const [filteredArticles, setFilteredArticles] = React.useState<Item[]>();
 
   React.useEffect(() => {
     getArticles().then(setArticles);
@@ -26,6 +27,7 @@ export function Home() {
     } else {
       tempArticles = articles;
     }
+    setFilteredArticles(tempArticles);
     setVisibleArticles(tempArticles?.slice(0, articlesShown));
   }, [articles, articlesShown, filterValue]);
 
@@ -54,11 +56,13 @@ export function Home() {
         : Array.from(Array(articlesShown)).map((item, index) => {
             return <ArticleCardSkeleton key={index} />;
           })}
-      {visibleArticles && (
-        <Button variant="contained" onClick={handleLoadMore}>
-          Show More
-        </Button>
-      )}
+      {visibleArticles &&
+        filteredArticles &&
+        filteredArticles.length > articlesShown && (
+          <Button variant="contained" onClick={handleLoadMore}>
+            Show More
+          </Button>
+        )}
     </div>
   );
 }
