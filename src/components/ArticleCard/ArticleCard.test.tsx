@@ -10,6 +10,7 @@ test('renders ArticleCard with image', () => {
     pubDate: 'Mon, 20 Mar 2023 17:56:10 +0000',
     mediaThumbnail: '/burki.jpg',
     link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    site: 'Test Page',
   };
   render(<ArticleCard {...testProps} />);
   const title = screen.getByText('Article Title');
@@ -35,6 +36,7 @@ test('renders ArticleCard with no image', () => {
     pubDate: 'Mon, 20 Mar 2023 17:56:10 +0000',
     link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     mediaThumbnail: null,
+    site: 'Test Page',
   };
   render(<ArticleCard {...testProps} />);
   const image = screen.getByAltText('Fallback image');
@@ -50,6 +52,7 @@ test('renders ArticleCard with long description', () => {
     pubDate: 'Mon, 20 Mar 2023 17:56:10 +0000',
     link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     mediaThumbnail: null,
+    site: 'Test Page',
   };
   render(<ArticleCard {...testProps} />);
   const description = screen.getByText(

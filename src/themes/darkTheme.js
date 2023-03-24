@@ -15,5 +15,39 @@ export const darkTheme = createTheme({
         },
       },
     },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: '#FFFFFF',
+          background: '#1b2127',
+          '&.Mui-focused': {
+            color: `white`,
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          '&.Mui-focused': {
+            '& .MuiOutlinedInput-notchedOutline': {
+              borderColor: `white`,
+            },
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {},
+        icon: {
+          color: '#FFFFFF',
+        },
+        select: {
+          border: 'solid #FFFFFF',
+          color: '#FFFFFF',
+        },
+      },
+    },
   },
 });

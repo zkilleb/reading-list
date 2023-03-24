@@ -5,4 +5,5 @@ export class Item {
   link: string | null = '';
   mediaThumbnail: string | null = '';
   creator: string | null = '';
+  site: string | null = '';
 }
