@@ -12,35 +12,28 @@ export function ArticleCardSkeleton() {
           width: '100%',
         }}
       >
-        <Skeleton
-          sx={{ margin: 0 }}
-          variant="rectangular"
-          width={151}
-          height={153.98}
-        />
-        <div style={{ width: '100%' }}>
+        <div style={{ width: '25%' }}>
+          <Skeleton sx={{ margin: 0 }} variant="rectangular" height={153.98} />
+        </div>
+        <div style={{ width: '75%' }}>
           <Skeleton
-            sx={{ marginRight: 'auto', marginLeft: 'auto', marginTop: 2 }}
+            sx={{ marginTop: 2, marginRight: '10%', marginLeft: '10%' }}
             variant="rectangular"
-            width={900}
             height={20}
           />
           <Skeleton
-            sx={{ marginRight: 'auto', marginLeft: 'auto', marginTop: 2 }}
+            sx={{ marginTop: 2, marginRight: '10%', marginLeft: '10%' }}
             variant="rectangular"
-            width={900}
             height={15}
           />
           <Skeleton
-            sx={{ marginRight: 'auto', marginLeft: 'auto', marginTop: 2 }}
+            sx={{ marginTop: 2, marginRight: '10%', marginLeft: '10%' }}
             variant="rectangular"
-            width={900}
             height={10}
           />
           <Skeleton
-            sx={{ marginRight: 'auto', marginLeft: 'auto', marginTop: 2 }}
+            sx={{ marginTop: 2, marginRight: '10%', marginLeft: '10%' }}
             variant="rectangular"
-            width={900}
             height={10}
           />
         </div>

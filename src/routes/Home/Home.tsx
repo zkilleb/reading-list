@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, SelectChangeEvent } from '@mui/material';
+import { Button } from '@mui/material';
 import { Item } from '../../classes';
 import { ArticleCard, Header, ArticleFilter } from '../../components';
 import { ArticleCardSkeleton } from '../../components/ArticleCard';
@@ -9,7 +9,7 @@ export function Home() {
   const [articles, setArticles] = React.useState<Item[]>();
   const [visibleArticles, setVisibleArticles] = React.useState<Item[]>();
   const [articlesShown, setArticlesShown] = React.useState(5);
-  const [filterValue, setFilterValue] = React.useState<string>('All');
+  const [filterValue, setFilterValue] = React.useState<string>('All Sites');
   const [filteredArticles, setFilteredArticles] = React.useState<Item[]>();
 
   React.useEffect(() => {
@@ -18,11 +18,15 @@ export function Home() {
 
   React.useEffect(() => {
     let tempArticles;
-    if (filterValue !== 'All') {
+    if (filterValue !== 'All Sites') {
       tempArticles = articles?.filter((article) => {
-        return article.link?.includes(
-          filterValue.toLowerCase().replaceAll('.', '').replaceAll(' ', ''),
-        );
+        return filterValue
+          .split(', ')
+          .some((el) =>
+            article.link?.includes(
+              el.toLowerCase().replaceAll('.', '').replaceAll(' ', ''),
+            ),
+          );
       });
     } else {
       tempArticles = articles;
@@ -35,19 +39,17 @@ export function Home() {
     setArticlesShown(articlesShown + 5);
   };
 
-  const handleFilterChange = (event: SelectChangeEvent) => {
-    setFilterValue(event.target.value);
+  const handleFilterChange = (display?: string) => {
+    if (display) {
+      setFilterValue(display);
+    }
   };
 
   return (
     <div>
       <Header />
       {articles && (
-        <ArticleFilter
-          value={filterValue}
-          articles={articles}
-          handleChange={handleFilterChange}
-        />
+        <ArticleFilter articles={articles} handleChange={handleFilterChange} />
       )}
       {visibleArticles
         ? visibleArticles.map((article) => {
